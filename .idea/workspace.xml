@@ -5,20 +5,72 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1fe5ec0f-6dce-48b3-bad2-9722109239aa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.eslintignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.husky/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.husky/pre-commit" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.prettierignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.stylelintignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.stylelintrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Main/Banners/HeaderBanners/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Main/Banners/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Main/Footer/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Main/Header/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Main/Modals/Auth/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Main/Modals/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/hooks/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/hooks/redux/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/store/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/store/rootReducer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/account/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/basic/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/basic-page.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Montserat/Montserrat-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Montserat/Montserrat-Regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Montserat/Montserrat-Regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Montserat/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome/css/all.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome/css/all.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome/css/brands.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome/css/brands.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome/css/fontawesome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome/css/fontawesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome/css/regular.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome/css/regular.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome/css/solid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome/css/solid.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome/css/svg-with-js.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome/css/svg-with-js.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome/css/v4-font-face.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome/css/v4-font-face.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome/css/v4-shims.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome/css/v4-shims.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome/css/v5-font-face.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome/css/v5-font-face.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome/webfonts/fa-brands-400.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome/webfonts/fa-brands-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome/webfonts/fa-regular-400.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome/webfonts/fa-regular-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome/webfonts/fa-solid-900.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome/webfonts/fa-solid-900.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome/webfonts/fa-v4compatibility.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome/webfonts/fa-v4compatibility.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/AddBanner 1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/AddBanner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/avatar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/banner-1200-150.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/banner-150-150.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/banner-160-600.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/banner-1600-200.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/banner-728-90.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/bg-img.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/app.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/app.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/hello.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/hello.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/Home.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/Home.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/Home.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/globals.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,29 +92,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/projects/react/bull-metrics",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "C:\\projects\\react\\bull-metrics\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "ts.external.directory.path": "C:\\projects\\react\\bull-metrics\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/projects/react/bull-metrics&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;C:\\projects\\react\\bull-metrics\\node_modules\\stylelint&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\projects\\react\\bull-metrics\\node_modules\\prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.stylesheets.stylelint&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\projects\\react\\bull-metrics\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\projects\react\bull-metrics" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\projects\react\bull-metrics\public" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -73,7 +131,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1669398055954</updated>
-      <workItem from="1669398058347" duration="4928000" />
+      <workItem from="1669398058347" duration="10270000" />
+      <workItem from="1669408500410" duration="4487000" />
     </task>
     <servers />
   </component>
