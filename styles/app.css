@@ -13194,7 +13194,7 @@ a {
 	border-radius: 5px;
 }
 
-.banner-fifth__list ul {
+.banner-fifth__list ul, .banner-fifth__list .banner-list-slider {
 	display: flex;
 	justify-content: space-evenly;
 	padding: 20px 0;

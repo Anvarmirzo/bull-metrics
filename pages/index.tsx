@@ -6,6 +6,8 @@ import Banner728 from "../public/images/banner-728-90.png";
 import Banner160 from "../public/images/banner-160-600.png";
 import Banner150 from "../public/images/banner-150-150.png";
 import {Footer, Header, HeaderBanners} from "../components";
+import {Swiper, SwiperSlide} from "swiper/react";
+import {Autoplay} from "swiper";
 
 export default function Home() {
 	return (
@@ -36,31 +38,39 @@ export default function Home() {
 			<section className="banner-fifth">
 				<div className="banner-fifth__container container">
 					<div className="banner-fifth__list">
-						<marquee behavior="alternate" direction="right">
-							<ul>
-								<li>
-									<a href="#">Реклама</a>
-								</li>
-								<li>
-									<a href="#">Реклама</a>
-								</li>
-								<li>
-									<a href="#">Реклама</a>
-								</li>
-								<li>
-									<a href="#">Реклама</a>
-								</li>
-								<li>
-									<a href="#">Реклама</a>
-								</li>
-								<li>
-									<a href="#">Реклама</a>
-								</li>
-								<li>
-									<a href="#">Реклама</a>
-								</li>
-							</ul>
-						</marquee>
+						<Swiper
+							spaceBetween={50}
+							slidesPerView={7}
+							speed={3000}
+							autoplay={{delay: 1, disableOnInteraction: false}}
+							modules={[Autoplay]}
+							className="banner-list-slider"
+						>
+							<SwiperSlide>
+								<a href="#">Реклама</a>
+							</SwiperSlide>
+							<SwiperSlide>
+								<a href="#">Реклама</a>
+							</SwiperSlide>
+							<SwiperSlide>
+								<a href="#">Реклама</a>
+							</SwiperSlide>
+							<SwiperSlide>
+								<a href="#">Реклама</a>
+							</SwiperSlide>
+							<SwiperSlide>
+								<a href="#">Реклама</a>
+							</SwiperSlide>
+							<SwiperSlide>
+								<a href="#">Реклама</a>
+							</SwiperSlide>
+							<SwiperSlide>
+								<a href="#">Реклама</a>
+							</SwiperSlide>
+							<SwiperSlide>
+								<a href="#">Реклама</a>
+							</SwiperSlide>
+						</Swiper>
 					</div>
 				</div>
 			</section>
