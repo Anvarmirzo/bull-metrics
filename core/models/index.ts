@@ -1,32 +1,40 @@
 import {ReactElement} from 'react';
 
-export enum RoleType {
+export enum eRoleType {
 	Admin = 1,
 	User,
 }
 
-export enum SlideoverModes {
+export enum eSlideoverModes {
 	edit = 'Edit',
 	show = 'Show',
 	create = 'Create',
 	none = 'None',
 }
 
-export enum THead {
+export enum eTHead {
 	avatar = 'Avatar',
 	edit = 'Edit',
 }
 
-export enum BannerPosition {
+export enum eBannerPosition {
 	full = 'full',
 	right = 'right',
 	left = 'left',
 }
 
-export enum ContextPriority {
+export enum eContextPriority {
 	urgent = 'urgent',
 	medium = 'medium',
 	low = 'low',
+}
+
+export enum eBannerSize {
+	size_1600x200 = 'size_1600x200',
+	size_728x90 = 'size_728x90',
+	size_1200x150 = 'size_1200x150',
+	size_160x600 = 'size_160x600',
+	size_150x150 = 'size_150x150',
 }
 
 export interface ILinkObj {
@@ -83,10 +91,10 @@ export interface IRole {
 export interface IBannerType {
 	id: number;
 	name: string;
-	size: string;
+	size: eBannerSize;
 	price: number;
 	index?: number;
-	position: BannerPosition;
+	position: eBannerPosition;
 }
 
 export interface IBanner {
@@ -115,7 +123,7 @@ export interface IContextType {
 	id: number;
 	name: string;
 	price: number;
-	priority: ContextPriority;
+	priority: eContextPriority;
 }
 
 export interface IContext {
