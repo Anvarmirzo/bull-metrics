@@ -45,12 +45,9 @@ const Account = () => {
 	}, [router.query]);
 
 	// react hook form
-	const {
-		register,
-		handleSubmit,
-		setValue,
-		formState: {},
-	} = useForm<IPatchUser & {oldPassword: string; newPassword: string; checkNewPassword: string}>();
+	const {register, handleSubmit, setValue} = useForm<
+		IPatchUser & {oldPassword: string; newPassword: string; checkNewPassword: string}
+	>();
 
 	const onTabSelect = (key: string | null) => router.push({query: {tab: key}}, undefined, {scroll: false});
 
