@@ -37,17 +37,24 @@ const Account = () => {
 		};
 	}, [user]);
 
+	// set initial tab
+	useEffect(() => {
+		if (!router.query.tab) {
+			void router.push({query: {tab: "personal"}});
+		}
+	}, [router.query]);
+
 	// react hook form
 	const {
 		register,
 		handleSubmit,
 		setValue,
-		formState: {errors},
+		formState: {},
 	} = useForm<IPatchUser & {oldPassword: string; newPassword: string; checkNewPassword: string}>();
 
 	const onTabSelect = (key: string | null) => router.push({query: {tab: key}}, undefined, {scroll: false});
 
-	const onPersonalDataSubmit = ({
+	const onPersonalDataSubmit = async ({
 		newPassword,
 		checkNewPassword,
 		oldPassword,
@@ -56,15 +63,21 @@ const Account = () => {
 		if (user) {
 			if (newPassword) {
 				if (newPassword === checkNewPassword) {
-					dispatch(
+					const action = await dispatch(
 						patchUserThunk({
 							userId: user.id,
 							params: {
+								oldPassword: oldPassword,
 								password: newPassword,
-								// oldPassword: user.password,
 							},
 						}),
 					);
+
+					if (action.payload) {
+						setValue("oldPassword", newPassword);
+						setValue("newPassword", "");
+						setValue("checkNewPassword", "");
+					}
 				} else {
 					toast.error("Пароли не совпадают");
 				}
@@ -342,6 +355,7 @@ const Account = () => {
 														className="form-control"
 														id="exampleFormControlInput1"
 														placeholder="password"
+														defaultValue=""
 														{...register("oldPassword")}
 													/>
 												</div>
@@ -354,6 +368,7 @@ const Account = () => {
 														className="form-control"
 														id="exampleFormControlInput2"
 														placeholder="password"
+														defaultValue=""
 														{...register("newPassword")}
 													/>
 												</div>
@@ -366,6 +381,7 @@ const Account = () => {
 														className="form-control"
 														id="exampleFormControlInput3"
 														placeholder="password"
+														defaultValue=""
 														{...register("checkNewPassword")}
 													/>
 												</div>

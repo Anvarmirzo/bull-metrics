@@ -74,7 +74,7 @@ export const patchUserThunk = createAsyncThunk(
 		const data = await AuthService.patchUser(payload.userId, payload.params);
 
 		if (data) {
-			thunkAPI.dispatch(setUserAction(data));
+			return thunkAPI.dispatch(setUserAction(data));
 		}
 	},
 );

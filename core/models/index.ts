@@ -72,6 +72,7 @@ export type IPatchUser = Partial<{
 	phone: string;
 	balance: number;
 	password: string;
+	oldPassword: string;
 }>;
 
 export interface IRole {
@@ -135,6 +136,7 @@ export interface IUser {
 	contexts: IContext[];
 	banners: IBanner[];
 	chains: IChain[];
+	password: string;
 
 	balance?: number;
 }
