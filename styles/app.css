@@ -205,6 +205,16 @@ img {
 	height: auto;
 }
 
+.main-modal__close-btn {
+	display: flex;
+	justify-content: flex-end;
+	padding: 10px 10px 0;
+}
+
+.main-modal .form-select {
+	padding: 1rem 0.75rem;
+}
+
 .datepicker {
 	display: none;
 }
@@ -13194,7 +13204,7 @@ a {
 	border-radius: 5px;
 }
 
-.banner-fifth__list ul, .banner-fifth__list .banner-list-slider {
+.banner-fifth__list ul {
 	display: flex;
 	justify-content: space-evenly;
 	padding: 20px 0;
@@ -14273,6 +14283,11 @@ a {
 	padding: 40px 0;
 }
 
+.personal-info-section__tab-buy-flex {
+	display: flex;
+	flex-direction: column;
+}
+
 .personal-info-section__tab-buy-link {
 	font-size: 18px;
 	color: #8ab4f8;
@@ -14293,6 +14308,23 @@ a {
 .personal-info-section__tab-buy-link:hover {
 	color: #8ab4f8;
 	text-decoration: underline;
+}
+
+.personal-info-section__tab-buy-btn {
+	font-size: 18px;
+	color: #fff;
+	line-height: 150%;
+	background: linear-gradient(180deg, #01ad0f 58.49%, rgb(181 255 185) 119.26%);
+	border-radius: 5px;
+	padding: 10px 30px;
+	will-change: transform;
+	transition: 0.5s;
+	margin-top: 30px;
+	width: fit-content;
+}
+
+.personal-info-section__tab-buy-btn:hover {
+	transform: scale(1.02);
 }
 
 .personal-info-section__form-item a {

@@ -4,11 +4,19 @@ import LargeBanner from "../../../../public/images/banner-1600-200.png";
 import AddBanner from "../../../../public/images/AddBanner 1.png";
 import Logo from "../../../../public/images/logo.png";
 import Banner728 from "../../../../public/images/banner-728-90.png";
+import {useAppDispatch} from "../../../../core/hooks";
+import {setIsVisibleModalAction} from "../../../../core/store/modal/modal.slices";
 
 export const HeaderBanners = () => {
+	// redux hooks
+	const dispatch = useAppDispatch();
+
+	const onToggleModalVisibility = (payload: {name: "order"; isVisible: boolean}) => () => {
+		dispatch(setIsVisibleModalAction(payload));
+	};
 	return (
 		<>
-			<section className="banner-first">
+			<section className="banner-first" onClick={onToggleModalVisibility({name: "order", isVisible: true})}>
 				<div className="banner-first__container container-fluid">
 					<div className="banner__content banner-stroke__color">
 						<a href="#">

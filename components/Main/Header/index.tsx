@@ -1,16 +1,27 @@
 import React from "react";
+import Link from "next/link";
+import {useAppDispatch} from "../../../core/hooks";
+import {setIsVisibleModalAction} from "../../../core/store/modal/modal.slices";
 
 export const Header = () => {
+	// redux hooks
+	const dispatch = useAppDispatch();
+
+	const onToggleModalVisibility = (payload: {name: "login" | "register"; isVisible: boolean}) => () => {
+		dispatch(setIsVisibleModalAction(payload));
+	};
 	return (
 		<header className="header-section">
 			<div className="header-section__container container">
 				<div className="header-section__menu">
 					<ul className="header-section__list">
 						<li>
-							<span>
-								<i className="fa fa-house-chimney"></i>
-							</span>
-							<a href="#">Главная</a>
+							<Link className="d-flex gap-2" href="/">
+								<span>
+									<i className="fa fa-house-chimney"></i>
+								</span>
+								Главная
+							</Link>
 						</li>
 						<li className="active">
 							<span>
@@ -89,17 +100,17 @@ export const Header = () => {
 					</div>
 					<ul className="header-section__account">
 						<li>
-							<a href="#sign-in" data-modal-id="signInModal">
+							<button type="button" onClick={onToggleModalVisibility({name: "login", isVisible: true})}>
 								Вход
-							</a>
+							</button>
 						</li>
 						<li>
 							<span>/</span>
 						</li>
 						<li>
-							<a href="#sign-up" data-modal-id="signInModal">
+							<button onClick={onToggleModalVisibility({name: "register", isVisible: true})} type="button">
 								Регистрация
-							</a>
+							</button>
 						</li>
 					</ul>
 				</div>
