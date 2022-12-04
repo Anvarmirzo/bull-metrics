@@ -1,5 +1,7 @@
 import axios, {AxiosRequestConfig} from 'axios';
 
+import {Toast} from '../utils';
+
 const api = axios.create({
 	baseURL: `${process.env.NEXT_PUBLIC_API_URL}/`,
 });
@@ -21,6 +23,7 @@ api.interceptors.response.use(
 		return response;
 	},
 	async function (error) {
+		Toast.error(error);
 		if (error.response?.status === 401) {
 			localStorage.removeItem('jwt');
 		}
