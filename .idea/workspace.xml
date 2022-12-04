@@ -5,22 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1fe5ec0f-6dce-48b3-bad2-9722109239aa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/components/Main/Loader/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Main/Loader/styles.module.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Main/Header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main/Header/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Main/Modals/Auth/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main/Modals/Auth/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/api/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/core/api/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/models/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/core/models/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/services/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/core/services/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/store/auth/auth.slices.ts" beforeDir="false" afterPath="$PROJECT_DIR$/core/store/auth/auth.slices.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/store/auth/auth.thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/core/store/auth/auth.thunks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/account/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/account/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +81,8 @@
       <workItem from="1670013640596" duration="221000" />
       <workItem from="1670037508427" duration="1970000" />
       <workItem from="1670059066260" duration="10101000" />
-      <workItem from="1670128007962" duration="21092000" />
+      <workItem from="1670128007962" duration="21329000" />
+      <workItem from="1670171639496" duration="3934000" />
     </task>
     <servers />
   </component>
