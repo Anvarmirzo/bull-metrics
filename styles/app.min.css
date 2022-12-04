@@ -104,7 +104,6 @@ video {
 
 html {
 	text-size-adjust: 100%;
-	text-size-adjust: 100%;
 }
 
 img,
@@ -918,7 +917,13 @@ select:disabled {
 	opacity: 1;
 }
 
-[list]:not([type='date'], [type='datetime-local'], [type='month'], [type='week'], [type='time'])::-webkit-calendar-picker-indicator {
+[list]:not(
+[type='date'],
+[type='datetime-local'],
+[type='month'],
+[type='week'],
+[type='time']
+)::-webkit-calendar-picker-indicator {
 	display: none !important;
 }
 

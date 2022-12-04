@@ -3,10 +3,10 @@ import "../public/fonts/fontawesome/css/fontawesome.css";
 import "../public/fonts/fontawesome/css/solid.css";
 import "swiper/css";
 
-import type {AppProps} from "next/app";
+import {AppProps} from "next/app";
 import {wrapper} from "../core/store";
 import {Provider} from "react-redux";
-import {AuthModal} from "../components";
+import {AuthModal, OrderModal} from "../components";
 
 const MyApp = ({Component, ...rest}: AppProps) => {
 	const {store, props} = wrapper.useWrappedStore(rest);
@@ -14,6 +14,7 @@ const MyApp = ({Component, ...rest}: AppProps) => {
 	return (
 		<Provider store={store}>
 			<AuthModal />
+			<OrderModal />
 			<Component {...props} />
 		</Provider>
 	);

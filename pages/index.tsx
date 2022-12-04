@@ -19,7 +19,61 @@ export default function Home() {
 			</Head>
 
 			<HeaderBanners />
-
+			<section className="banner-fifth">
+				<div className="banner-fifth__container container">
+					<div className="banner-fifth__list">
+						<Swiper
+							spaceBetween={50}
+							slidesPerView={7}
+							speed={3000}
+							autoplay={{delay: 1, disableOnInteraction: false}}
+							modules={[Autoplay]}
+							className="banner-list-slider"
+						>
+							<SwiperSlide>
+								<a href="#" className="d-block py-4">
+									Реклама
+								</a>
+							</SwiperSlide>
+							<SwiperSlide>
+								<a href="#" className="d-block py-4">
+									Реклама
+								</a>
+							</SwiperSlide>
+							<SwiperSlide>
+								<a href="#" className="d-block py-4">
+									Реклама
+								</a>
+							</SwiperSlide>
+							<SwiperSlide>
+								<a href="#" className="d-block py-4">
+									Реклама
+								</a>
+							</SwiperSlide>
+							<SwiperSlide>
+								<a href="#" className="d-block py-4">
+									Реклама
+								</a>
+							</SwiperSlide>
+							<SwiperSlide>
+								<a href="#" className="d-block py-4">
+									Реклама
+								</a>
+							</SwiperSlide>
+							<SwiperSlide>
+								<a href="#" className="d-block py-4">
+									Реклама
+								</a>
+							</SwiperSlide>
+							<SwiperSlide>
+								<a href="#" className="d-block py-4">
+									Реклама
+								</a>
+							</SwiperSlide>
+						</Swiper>
+					</div>
+				</div>
+			</section>
 			<Header />
 
 			<section className="banner-third">
@@ -35,45 +89,7 @@ export default function Home() {
 					</div>
 				</div>
 			</section>
-			<section className="banner-fifth">
-				<div className="banner-fifth__container container">
-					<div className="banner-fifth__list">
-						<Swiper
-							spaceBetween={50}
-							slidesPerView={7}
-							speed={3000}
-							autoplay={{delay: 1, disableOnInteraction: false}}
-							modules={[Autoplay]}
-							className="banner-list-slider"
-						>
-							<SwiperSlide>
-								<a href="#">Реклама</a>
-							</SwiperSlide>
-							<SwiperSlide>
-								<a href="#">Реклама</a>
-							</SwiperSlide>
-							<SwiperSlide>
-								<a href="#">Реклама</a>
-							</SwiperSlide>
-							<SwiperSlide>
-								<a href="#">Реклама</a>
-							</SwiperSlide>
-							<SwiperSlide>
-								<a href="#">Реклама</a>
-							</SwiperSlide>
-							<SwiperSlide>
-								<a href="#">Реклама</a>
-							</SwiperSlide>
-							<SwiperSlide>
-								<a href="#">Реклама</a>
-							</SwiperSlide>
-							<SwiperSlide>
-								<a href="#">Реклама</a>
-							</SwiperSlide>
-						</Swiper>
-					</div>
-				</div>
-			</section>
+
 			<section className="banner-fourth">
 				<div className="banner-fourth__container container">
 					<div className="banner-fourth__row row">
