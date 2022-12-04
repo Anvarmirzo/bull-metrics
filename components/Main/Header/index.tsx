@@ -1,21 +1,33 @@
 import React from "react";
 import Link from "next/link";
-import {useAppDispatch} from "../../../core/hooks";
+import {useAppDispatch, useAppSelector} from "../../../core/hooks";
 import {setIsVisibleModalAction} from "../../../core/store/modal/modal.slices";
+import {logoutThunk} from "../../../core/store/auth/auth.thunks";
+import {useRouter} from "next/router";
+import cn from "classnames";
 
 export const Header = () => {
+	// next hooks
+	const router = useRouter();
+
 	// redux hooks
 	const dispatch = useAppDispatch();
+	const auth = useAppSelector(({auth}) => auth);
 
 	const onToggleModalVisibility = (payload: {name: "login" | "register"; isVisible: boolean}) => () => {
 		dispatch(setIsVisibleModalAction(payload));
 	};
+
+	const onLogout = () => {
+		dispatch(logoutThunk());
+	};
+
 	return (
 		<header className="header-section">
 			<div className="header-section__container container">
 				<div className="header-section__menu">
 					<ul className="header-section__list">
-						<li>
+						<li className={cn({active: router.pathname === "/"})}>
 							<Link className="d-flex gap-2" href="/">
 								<span>
 									<i className="fa fa-house-chimney"></i>
@@ -23,7 +35,7 @@ export const Header = () => {
 								Главная
 							</Link>
 						</li>
-						<li className="active">
+						<li>
 							<span>
 								<i className="fa fa-cart-arrow-down"></i>
 							</span>
@@ -98,21 +110,37 @@ export const Header = () => {
 							</li>
 						</ul>
 					</div>
-					<ul className="header-section__account">
-						<li>
-							<button type="button" onClick={onToggleModalVisibility({name: "login", isVisible: true})}>
-								Вход
-							</button>
-						</li>
-						<li>
-							<span>/</span>
-						</li>
-						<li>
-							<button onClick={onToggleModalVisibility({name: "register", isVisible: true})} type="button">
-								Регистрация
-							</button>
-						</li>
-					</ul>
+					{auth.user ? (
+						<ul className="header-section__account">
+							<li>
+								<Link href="/account">{auth.user.name}</Link>
+							</li>
+							<li>
+								<span>/</span>
+							</li>
+							<li>
+								<button onClick={onLogout} type="button">
+									Выход
+								</button>
+							</li>
+						</ul>
+					) : (
+						<ul className="header-section__account">
+							<li>
+								<button type="button" onClick={onToggleModalVisibility({name: "login", isVisible: true})}>
+									Вход
+								</button>
+							</li>
+							<li>
+								<span>/</span>
+							</li>
+							<li>
+								<button onClick={onToggleModalVisibility({name: "register", isVisible: true})} type="button">
+									Регистрация
+								</button>
+							</li>
+						</ul>
+					)}
 				</div>
 			</div>
 		</header>

@@ -1,9 +1,10 @@
-import React from "react";
+import React, {FormEvent} from "react";
 import {Modal, Tab, Tabs} from "react-bootstrap";
 import {useAppDispatch, useAppSelector} from "../../../../core/hooks";
 import {setIsVisibleModalAction} from "../../../../core/store/modal/modal.slices";
 import {useForm} from "react-hook-form";
-import {ILogin} from "../../../../core/models";
+import {ILogin, ISignup} from "../../../../core/models";
+import {loginThunk, signupThunk} from "../../../../core/store/auth/auth.thunks";
 
 export const AuthModal = () => {
 	// redux hooks
@@ -15,12 +16,32 @@ export const AuthModal = () => {
 		register,
 		handleSubmit,
 		formState: {errors},
-	} = useForm<ILogin>();
+	} = useForm<{login: ILogin; register: ISignup}>();
 
 	const onToggleModalVisibility = (payload: {name?: "login" | "register"; isVisible: boolean}) => {
 		dispatch(setIsVisibleModalAction({...payload, name: "login"}));
 		dispatch(setIsVisibleModalAction({...payload, name: "register"}));
 		return undefined;
+	};
+
+	const onSubmit = (type: "login" | "signup") => (e: FormEvent) => {
+		e.preventDefault();
+
+		handleSubmit(async (data) => {
+			if (type === "login") {
+				const result = await dispatch(loginThunk(data.login));
+
+				if (result.payload) {
+					dispatch(setIsVisibleModalAction({name: "login", isVisible: false}));
+				}
+			} else {
+				const result = await dispatch(signupThunk(data.register));
+
+				if (result.payload) {
+					dispatch(setIsVisibleModalAction({name: "register", isVisible: false}));
+				}
+			}
+		})();
 	};
 
 	return (
@@ -45,36 +66,34 @@ export const AuthModal = () => {
 						}
 					}}
 				>
-					<Tab
-						eventKey="login"
-						className="account-modal__tab__btn"
-						title={
-							<button style={{color: "inherit"}} type="button">
-								Войти
-							</button>
-						}
-					>
+					<Tab eventKey="login" className="account-modal__tab__btn" title={<button type="button">Войти</button>}>
 						<div className="account__body container">
 							<div className="account__forms">
-								<form className="account__form" data-gtag-submit="popup">
+								<form onSubmit={onSubmit("login")} className="account__form" data-gtag-submit="popup">
 									<div className="account__input">
-										<input className="form-control" type="email" name="email" placeholder="E-mail" required />
+										<input
+											className="form-control"
+											type="text"
+											placeholder="Login"
+											required
+											{...register("login.login")}
+										/>
 									</div>
 									<div className="account__input">
-										<input className="form-control" type="tel" name="phone" placeholder="Password" required />
+										<input
+											className="form-control"
+											type="password"
+											placeholder="Password"
+											required
+											{...register("login.password")}
+										/>
 									</div>
-									<div className="account__input">
-										<input type="checkbox" id="remember-me" checked={false} />
-										<label htmlFor="remember-me">Remember me</label>
-									</div>
-									<input type="hidden" name="project" value="bull_etrics" />
+									{/*									<input type="hidden" name="project" value="bull_etrics" />
 									<input type="hidden" name="description" value="page_form" />
 									<input type="hidden" name="duration" className="duration" value="" />
 									<input type="hidden" name="pasted_fields" className="pasted_fields" value="" />
-									<input type="hidden" name="language" value="russian" />
-									<a href="account.html" className="account__btn">
-										Войти
-									</a>
+									<input type="hidden" name="language" value="russian" />*/}
+									<button className="account__btn">Войти</button>
 								</form>
 							</div>
 						</div>
@@ -82,26 +101,46 @@ export const AuthModal = () => {
 					<Tab
 						eventKey="register"
 						className="account-modal__tab__btn"
-						title={
-							<button style={{color: "inherit"}} type="button">
-								Регистрация
-							</button>
-						}
+						title={<button type="button">Регистрация</button>}
 					>
 						<div className="account__body container">
 							<div className="account__forms">
-								<form action="" method="post" className="account__form" data-gtag-submit="popup">
+								<form onSubmit={onSubmit("signup")} className="account__form">
 									<div className="account__input">
-										<input className="form-control" type="text" name="text" placeholder="Login" required />
+										<input
+											className="form-control"
+											type="text"
+											placeholder="Name"
+											required
+											{...register("register.name")}
+										/>
 									</div>
 									<div className="account__input">
-										<input className="form-control" type="email" name="email" placeholder="E-mail" required />
+										<input
+											className="form-control"
+											type="email"
+											placeholder="E-mail"
+											required
+											{...register("register.email")}
+										/>
 									</div>
 									<div className="account__input">
-										<input className="form-control" type="tel" name="phone" placeholder="Password" required />
+										<input
+											className="form-control"
+											type="tel"
+											placeholder="Phone"
+											required
+											{...register("register.phone")}
+										/>
 									</div>
 									<div className="account__input">
-										<input className="form-control" type="text" name="text" placeholder="Name" required />
+										<input
+											className="form-control"
+											type="password"
+											placeholder="Password"
+											required
+											{...register("register.password")}
+										/>
 									</div>
 									<div>
 										<input type="checkbox" id="accept-terms" />
@@ -112,112 +151,12 @@ export const AuthModal = () => {
 									<input type="hidden" name="duration" className="duration" value="" />
 									<input type="hidden" name="pasted_fields" className="pasted_fields" value="" />
 									<input type="hidden" name="language" value="russian" />
-									<a href="account.html" className="account__btn">
-										Войти
-									</a>
+									<button className="account__btn">Войти</button>
 								</form>
 							</div>
 						</div>
 					</Tab>
 				</Tabs>
-				{/*<ul className="account-modal__tab__list nav nav-tabs" id="sign-in-tabs" role="tablist">
-					<li className="account-modal__tab__item nav-item" role="presentation">
-						<button
-							className="account-modal__tab__btn nav-link active"
-							data-bs-toggle="tab"
-							data-bs-target="#sign-in"
-							type="button"
-							role="tab"
-							aria-controls="sign-in"
-							aria-selected="true"
-						>
-							Войти
-						</button>
-					</li>
-					<li className="account-modal__tab__item  nav-item" role="presentation">
-						<button
-							className="account-modal__tab__btn nav-link"
-							data-bs-toggle="tab"
-							data-bs-target="#sign-up"
-							type="button"
-							role="tab"
-							aria-controls="sign-up"
-							aria-selected="false"
-						>
-							Регистрация
-						</button>
-					</li>
-				</ul>
-				<div className="account-modal__tab__content tab-content">
-					<div
-						className="account-modal__tab__pane tab-pane fade show active"
-						id="sign-in"
-						role="tabpanel"
-						aria-labelledby="modal-tabs-1"
-					>
-						<div className="account__body modal-body container">
-							<div className="account__forms">
-								<form action="" method="post" className="account__form" data-gtag-submit="popup">
-									<div className="account__input">
-										<input className="form-control" type="email" name="email" placeholder="E-mail" required />
-									</div>
-									<div className="account__input">
-										<input className="form-control" type="tel" name="phone" placeholder="Password" required />
-									</div>
-									<div className="account__input">
-										<input type="checkbox" id="remember-me" checked={false} />
-										<label htmlFor="remember-me">Remember me</label>
-									</div>
-									<input type="hidden" name="project" value="bull_etrics" />
-									<input type="hidden" name="description" value="page_form" />
-									<input type="hidden" name="duration" className="duration" value="" />
-									<input type="hidden" name="pasted_fields" className="pasted_fields" value="" />
-									<input type="hidden" name="language" value="russian" />
-									<a href="account.html" className="account__btn">
-										Войти
-									</a>
-								</form>
-							</div>
-						</div>
-					</div>
-					<div
-						className="account-modal__tab__pane tab-pane fade"
-						id="sign-up"
-						role="tabpanel"
-						aria-labelledby="modal-tabs-2"
-					>
-						<div className="account__body modal-body container">
-							<div className="account__forms">
-								<form action="" method="post" className="account__form" data-gtag-submit="popup">
-									<div className="account__input">
-										<input className="form-control" type="text" name="text" placeholder="Login" required />
-									</div>
-									<div className="account__input">
-										<input className="form-control" type="email" name="email" placeholder="E-mail" required />
-									</div>
-									<div className="account__input">
-										<input className="form-control" type="tel" name="phone" placeholder="Password" required />
-									</div>
-									<div className="account__input">
-										<input className="form-control" type="text" name="text" placeholder="Name" required />
-									</div>
-									<div>
-										<input type="checkbox" id="accept-terms" />
-										<label htmlFor="accept-terms">I agree to the Terms</label>
-									</div>
-									<input type="hidden" name="project" value="bull_etrics" />
-									<input type="hidden" name="description" value="page_form" />
-									<input type="hidden" name="duration" className="duration" value="" />
-									<input type="hidden" name="pasted_fields" className="pasted_fields" value="" />
-									<input type="hidden" name="language" value="russian" />
-									<a href="account.html" className="account__btn">
-										Войти
-									</a>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>*/}
 			</Modal.Body>
 		</Modal>
 	);

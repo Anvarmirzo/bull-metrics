@@ -53,6 +53,27 @@ export interface ILogin {
 	password: string;
 }
 
+export interface ISignup {
+	name: string;
+	email: string;
+	phone: string;
+	password: string;
+}
+
+export interface IAuthResponse {
+	jwt: string;
+	user: IUser;
+}
+
+export type IPatchUser = Partial<{
+	name: string;
+	roleId: number;
+	email: string;
+	phone: string;
+	balance: number;
+	password: string;
+}>;
+
 export interface IRole {
 	id: number;
 	title: string;
