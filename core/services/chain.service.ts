@@ -8,4 +8,7 @@ export const ChainService = {
 	post(params: IChainPostParams) {
 		return api.post<IChain>('chain', params).then((res) => res.data);
 	},
+	get() {
+		return api.get<{data: IChain[]}>('chain').then((res) => res.data);
+	},
 };

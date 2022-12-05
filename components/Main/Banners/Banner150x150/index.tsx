@@ -3,12 +3,15 @@ import Image from "next/image";
 import Banner150 from "../../../../public/images/banner-150-150.png";
 import AddBanner from "../../../../public/images/AddBanner 1.png";
 import {useAppDispatch, useAppSelector} from "../../../../core/hooks";
-import {eBannerSize} from "../../../../core/models";
+import {eBannerSize, IBanner} from "../../../../core/models";
 import {setIsVisibleModalAction} from "../../../../core/store/modal/modal.slices";
 import {toast} from "react-toastify";
-import Link from "next/link";
 
-export const Banner150x150 = () => {
+interface IProps {
+	banner?: IBanner;
+}
+
+export const Banner150x150 = ({banner}: IProps) => {
 	// redux hooks
 	const bannerTypes = useAppSelector(({banner}) => banner.types);
 	const dispatch = useAppDispatch();
@@ -29,9 +32,16 @@ export const Banner150x150 = () => {
 
 	return (
 		<div className="banner__content banner-stroke__color banner__content-item">
-			<Link href="/">
-				<Image src={Banner150} alt="" />
-			</Link>
+			<a href={banner?.url ?? "/"} target="_blank" rel="noreferrer">
+				<Image
+					width={150}
+					height={150}
+					src={banner?.poster?.url ?? Banner150}
+					alt=""
+					style={{width: "150px", height: "150px", maxWidth: "100%", objectFit: "cover"}}
+					crossOrigin="use-credentials"
+				/>
+			</a>
 			<button
 				onClick={onToggleModalVisibility({name: "order", isVisible: true})}
 				type="button"

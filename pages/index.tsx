@@ -2,6 +2,7 @@ import Head from "next/head";
 import {
 	Banner1200x150,
 	Banner150x150,
+	Banner1600x200,
 	Banner160x600,
 	Banner728x90,
 	Footer,
@@ -10,8 +11,40 @@ import {
 	HeaderChains,
 	MainContexts,
 } from "../components";
+import {useAppSelector} from "../core/hooks";
+import {eBannerSize} from "../core/models";
+import {useCallback} from "react";
+
+const placeholders = {
+	[eBannerSize.size_1600x200]: Banner1600x200,
+	[eBannerSize.size_1200x150]: Banner1200x150,
+	[eBannerSize.size_728x90]: Banner728x90,
+	[eBannerSize.size_160x600]: Banner160x600,
+	[eBannerSize.size_150x150]: Banner150x150,
+};
 
 export default function Home() {
+	// redux hooks
+	const banners = useAppSelector(({banner}) => banner.data);
+
+	const renderBanners = useCallback(
+		(bannerSize: eBannerSize) => {
+			const currentBanners = banners.filter((b) => b.type.size === bannerSize);
+
+			if (currentBanners.length) {
+				console.log(currentBanners);
+				return currentBanners.map((b) => {
+					const Component = placeholders[bannerSize];
+					return <Component banner={b} key={b.id} />;
+				});
+			} else {
+				const Component = placeholders[bannerSize];
+				return <Component />;
+			}
+		},
+		[banners],
+	);
+
 	return (
 		<>
 			<Head>
@@ -24,24 +57,22 @@ export default function Home() {
 			<HeaderChains />
 			<Header />
 
-			<section className="banner-third">
-				<Banner1200x150 />
-			</section>
+			<section className="banner-third">{renderBanners(eBannerSize.size_1200x150)}</section>
 
 			<section className="banner-fourth">
 				<div className="banner-fourth__container container">
 					<div className="banner-fourth__row row">
 						<div className="banner-fourth__left col">
-							<Banner160x600 />
-							<Banner150x150 />
+							{renderBanners(eBannerSize.size_160x600)}
+							{renderBanners(eBannerSize.size_150x150)}
 						</div>
 						<div className=" banner-fourth__center col-xl-6 col-sm-12">
-							<Banner728x90 />
+							{renderBanners(eBannerSize.size_728x90)}
 							<MainContexts />
 						</div>
 						<div className=" banner-fourth__right col">
-							<Banner160x600 />
-							<Banner150x150 />
+							{renderBanners(eBannerSize.size_160x600)}
+							{renderBanners(eBannerSize.size_150x150)}
 						</div>
 					</div>
 				</div>

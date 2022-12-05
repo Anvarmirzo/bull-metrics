@@ -30,6 +30,7 @@ export const OrderModal = () => {
 
 	// react hooks
 	const [preview, setPreview] = useState<{url: string; formData: FormData | null}>({url: "", formData: null});
+	const [isSending, setIsSending] = useState(false);
 
 	useEffect(() => {
 		if (modal.typeId) {
@@ -48,6 +49,7 @@ export const OrderModal = () => {
 	};
 
 	const onSubmit = async (state: IFields) => {
+		setIsSending(true);
 		if (modal.currentType === "banner") {
 			if (preview.formData) {
 				const action = await dispatch(fileUploadThunk(preview.formData));
@@ -64,7 +66,10 @@ export const OrderModal = () => {
 						setPreview({url: "/images/logo.png", formData: null});
 						onToggleModalVisibility(false)();
 					}
+					setIsSending(false);
 				}
+			} else {
+				setIsSending(false);
 			}
 		} else if (modal.currentType === "chain") {
 			const chain = await dispatch(postChainThunk({days: state.days, url: state.url, title: state.title}));
@@ -73,6 +78,7 @@ export const OrderModal = () => {
 				reset();
 				onToggleModalVisibility(false)();
 			}
+			setIsSending(false);
 		} else if (modal.currentType === "context") {
 			const context = await dispatch(
 				postContextThunk({
@@ -89,6 +95,8 @@ export const OrderModal = () => {
 				reset();
 				onToggleModalVisibility(false)();
 			}
+
+			setIsSending(false);
 		}
 	};
 
@@ -232,7 +240,13 @@ export const OrderModal = () => {
 							<h3>
 								Цена: <strong>{modal.price * (isNaN(watchDays) ? 0 : watchDays)}</strong> сум
 							</h3>
-							<button className="account__btn mt-4">Заказать</button>
+							<button
+								style={{cursor: isSending ? "default" : "pointer"}}
+								disabled={isSending}
+								className="account__btn mt-4"
+							>
+								Заказать
+							</button>
 						</form>
 					</div>
 				</div>

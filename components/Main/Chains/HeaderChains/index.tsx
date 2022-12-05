@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useCallback} from "react";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Autoplay} from "swiper";
 import Image from "next/image";
@@ -9,7 +9,7 @@ import {toast} from "react-toastify";
 
 export const HeaderChains = () => {
 	// redux hooks
-	const chainTypes = useAppSelector(({chain}) => chain.types);
+	const [chainTypes, chains] = useAppSelector(({chain}) => [chain.types, chain.data]);
 	const dispatch = useAppDispatch();
 
 	const onToggleModalVisibility = (payload: {name: "order"; isVisible: boolean}) => () => {
@@ -26,6 +26,30 @@ export const HeaderChains = () => {
 		}
 	};
 
+	const renderChains = useCallback(() => {
+		return chains.map((c) => (
+			<SwiperSlide key={c.id}>
+				<a href="#" className="d-block py-4">
+					{c.title}
+				</a>
+			</SwiperSlide>
+		));
+	}, [chains]);
+
+	const renderPlaceholders = () => {
+		const placeholdersCount = 8 - chains.length;
+
+		if (placeholdersCount > 0) {
+			return new Array(placeholdersCount).map((_, i) => (
+				<SwiperSlide key={i}>
+					<a href="#" className="d-block py-4">
+						Реклама
+					</a>
+				</SwiperSlide>
+			));
+		}
+	};
+
 	return (
 		<section className="banner-fifth">
 			<div className="banner-fifth__container container">
@@ -38,46 +62,8 @@ export const HeaderChains = () => {
 						modules={[Autoplay]}
 						className="banner-list-slider"
 					>
-						<SwiperSlide>
-							<a href="#" className="d-block py-4">
-								Реклама
-							</a>
-						</SwiperSlide>
-						<SwiperSlide>
-							<a href="#" className="d-block py-4">
-								Реклама
-							</a>
-						</SwiperSlide>
-						<SwiperSlide>
-							<a href="#" className="d-block py-4">
-								Реклама
-							</a>
-						</SwiperSlide>
-						<SwiperSlide>
-							<a href="#" className="d-block py-4">
-								Реклама
-							</a>
-						</SwiperSlide>
-						<SwiperSlide>
-							<a href="#" className="d-block py-4">
-								Реклама
-							</a>
-						</SwiperSlide>
-						<SwiperSlide>
-							<a href="#" className="d-block py-4">
-								Реклама
-							</a>
-						</SwiperSlide>
-						<SwiperSlide>
-							<a href="#" className="d-block py-4">
-								Реклама
-							</a>
-						</SwiperSlide>
-						<SwiperSlide>
-							<a href="#" className="d-block py-4">
-								Реклама
-							</a>
-						</SwiperSlide>
+						{renderChains()}
+						{renderPlaceholders()}
 					</Swiper>
 				</div>
 				<button

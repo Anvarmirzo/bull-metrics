@@ -2,7 +2,7 @@ import {createAsyncThunk} from '@reduxjs/toolkit';
 
 import {IContextPostParams} from '../../models';
 import {ContextService} from '../../services';
-import {setContextTypesAction} from './context.slices';
+import {setContextsAction, setContextTypesAction} from './context.slices';
 
 export const getContextTypesThunk = createAsyncThunk(
 	'context/getContextTypes',
@@ -15,10 +15,18 @@ export const getContextTypesThunk = createAsyncThunk(
 	},
 );
 
-export const postContextThunk = createAsyncThunk('context/post', async (params: IContextPostParams, thunkAPI) => {
+export const postContextThunk = createAsyncThunk('context/post', async (params: IContextPostParams) => {
 	const data = await ContextService.post(params);
 
 	if (data) {
 		return data;
+	}
+});
+
+export const getContextsThunk = createAsyncThunk('context/getAll', async (_, thunkAPI) => {
+	const data = await ContextService.get();
+
+	if (data) {
+		thunkAPI.dispatch(setContextsAction(data.data));
 	}
 });
