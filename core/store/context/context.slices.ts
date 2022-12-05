@@ -1,9 +1,10 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 
-import {IContextType} from '../../models';
+import {IContext, IContextType} from '../../models';
 
 interface IState {
 	types: {count: number; data: IContextType[]};
+	data: IContext[];
 }
 
 const initialState: IState = {
@@ -11,17 +12,21 @@ const initialState: IState = {
 		count: 0,
 		data: [],
 	},
+	data: [],
 };
 
 export const {
 	reducer: contextReducer,
-	actions: {setContextTypesAction},
+	actions: {setContextTypesAction, setContextsAction},
 } = createSlice({
 	name: 'context',
 	initialState,
 	reducers: {
 		setContextTypesAction: (state, action: PayloadAction<IState['types']>) => {
 			state.types = action.payload;
+		},
+		setContextsAction: (state, action: PayloadAction<IState['data']>) => {
+			state.data = action.payload;
 		},
 	},
 });

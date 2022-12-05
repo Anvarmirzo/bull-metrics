@@ -2,7 +2,7 @@ import {createAsyncThunk} from '@reduxjs/toolkit';
 
 import {IBannerPostParams} from '../../models';
 import {BannerService} from '../../services';
-import {setBannerTypesAction} from './banner.slices';
+import {setBannersAction, setBannerTypesAction} from './banner.slices';
 
 export const getBannerTypesThunk = createAsyncThunk(
 	'banner/getBannerTypes',
@@ -19,5 +19,12 @@ export const postBannerThunk = createAsyncThunk('banner/post', async (params: IB
 	const data = await BannerService.post(params);
 	if (data) {
 		return data;
+	}
+});
+export const getBannersThunk = createAsyncThunk('banner/getAll', async (_, thunkAPI) => {
+	const data = await BannerService.get();
+
+	if (data) {
+		thunkAPI.dispatch(setBannersAction(data.data));
 	}
 });

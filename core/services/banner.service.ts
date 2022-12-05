@@ -8,4 +8,7 @@ export const BannerService = {
 	post(params: IBannerPostParams) {
 		return api.post<IBanner>('banner', params).then((res) => res.data);
 	},
+	get() {
+		return api.get<{data: IBanner[]}>('banner').then((res) => res.data);
+	},
 };

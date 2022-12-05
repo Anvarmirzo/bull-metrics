@@ -102,9 +102,8 @@ export interface IBanner {
 	type: IBannerType;
 	poster: IFile;
 	url: string;
-	activeAt: string;
+	clicked?: number;
 }
-
 export interface IBannerPostParams {
 	url: string;
 	typeId: number;
@@ -123,7 +122,7 @@ export interface IChain {
 	type: IChainType;
 	url: string;
 	title: string;
-	activeAt: string;
+	clicked?: number;
 }
 
 export interface IChainPostParams {
@@ -145,7 +144,7 @@ export interface IContext {
 	url: string;
 	title: string;
 	description?: string;
-	activeAt: string;
+	clicked?: number;
 }
 
 export interface IContextPostParams {

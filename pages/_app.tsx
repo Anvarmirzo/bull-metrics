@@ -13,10 +13,12 @@ import {useEffect} from "react";
 import {useAppDispatch, useAppSelector} from "../core/hooks";
 import {autoLoginThunk} from "../core/store/auth/auth.thunks";
 import {useRouter} from "next/router";
-import {getBannerTypesThunk} from "../core/store/banner/banner.thunks";
-import {setBannerTypesAction} from "../core/store/banner/banner.slices";
-import {getChainTypesThunk} from "../core/store/chain/chain.thunks";
-import {getContextTypesThunk} from "../core/store/context/context.thunks";
+import {getBannersThunk, getBannerTypesThunk} from "../core/store/banner/banner.thunks";
+import {setBannersAction, setBannerTypesAction} from "../core/store/banner/banner.slices";
+import {getChainsThunk, getChainTypesThunk} from "../core/store/chain/chain.thunks";
+import {getContextsThunk, getContextTypesThunk} from "../core/store/context/context.thunks";
+import {setChainsAction, setChainTypesAction} from "../core/store/chain/chain.slices";
+import {setContextsAction, setContextTypesAction} from "../core/store/context/context.slices";
 
 const MyApp = ({Component, ...rest}: AppProps) => {
 	// next hooks
@@ -30,14 +32,26 @@ const MyApp = ({Component, ...rest}: AppProps) => {
 	useEffect(() => {
 		const promises = [
 			dispatch(autoLoginThunk()),
+
 			dispatch(getBannerTypesThunk()),
 			dispatch(getChainTypesThunk()),
 			dispatch(getContextTypesThunk()),
+
+			dispatch(getBannersThunk()),
+			dispatch(getChainsThunk()),
+			dispatch(getContextsThunk()),
 		];
 
 		return () => {
 			promises.forEach((p) => p.abort());
+
 			dispatch(setBannerTypesAction({count: 0, data: []}));
+			dispatch(setChainTypesAction({data: []}));
+			dispatch(setContextTypesAction({count: 0, data: []}));
+
+			dispatch(setBannersAction([]));
+			dispatch(setChainsAction([]));
+			dispatch(setContextsAction([]));
 		};
 	}, []);
 

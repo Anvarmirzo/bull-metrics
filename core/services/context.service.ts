@@ -8,4 +8,7 @@ export const ContextService = {
 	post(params: IContextPostParams) {
 		return api.post<IContext>('context', params).then((res) => res.data);
 	},
+	get() {
+		return api.get<{data: IContext[]}>('context').then((res) => res.data);
+	},
 };
