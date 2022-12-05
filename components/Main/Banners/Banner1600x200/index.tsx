@@ -6,6 +6,7 @@ import {useAppDispatch, useAppSelector} from "../../../../core/hooks";
 import {setIsVisibleModalAction} from "../../../../core/store/modal/modal.slices";
 import {eBannerSize} from "../../../../core/models";
 import {toast} from "react-toastify";
+import Link from "next/link";
 
 export const Banner1600x200 = () => {
 	// redux hooks
@@ -28,13 +29,17 @@ export const Banner1600x200 = () => {
 
 	return (
 		<div className="banner__content banner-stroke__color">
-			<button onClick={onToggleModalVisibility({name: "order", isVisible: true})} type="button">
+			<Link href="/">
 				<Image unoptimized src={LargeBanner} alt="" />
-			</button>
-			<a href="#" className="banner__decor">
+			</Link>
+			<button
+				onClick={onToggleModalVisibility({name: "order", isVisible: true})}
+				type="button"
+				className="banner__decor"
+			>
 				<Image unoptimized src={AddBanner} alt="" />
 				<span>Разместить рекламу</span>
-			</a>
+			</button>
 		</div>
 	);
 };

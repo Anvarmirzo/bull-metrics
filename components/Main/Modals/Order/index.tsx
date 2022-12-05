@@ -1,8 +1,13 @@
-import React, {useEffect} from "react";
+import React, {ChangeEvent, useEffect, useState} from "react";
 import {Modal} from "react-bootstrap";
 import {useAppDispatch, useAppSelector} from "../../../../core/hooks";
 import {setIsVisibleModalAction} from "../../../../core/store/modal/modal.slices";
 import {useForm} from "react-hook-form";
+import {getURLFromFile} from "../../../../core/utils";
+import {fileUploadThunk} from "../../../../core/store/fileUpload/fileUpload.thunks";
+import {IFileUpload} from "../../../../core/models";
+import {postBannerThunk} from "../../../../core/store/banner/banner.thunks";
+import {toast} from "react-toastify";
 
 interface IFields {
 	url: string;
@@ -19,9 +24,11 @@ export const OrderModal = () => {
 	const dispatch = useAppDispatch();
 
 	// react-hook-form
-	const {register, setValue, handleSubmit, watch} = useForm<IFields>({defaultValues: {days: 0}});
+	const {register, setValue, handleSubmit, reset, watch} = useForm<IFields>({defaultValues: {days: 0}});
 
 	// react hooks
+	const [preview, setPreview] = useState<{url: string; formData: FormData | null}>({url: "", formData: null});
+
 	useEffect(() => {
 		if (modal.typeId) {
 			setValue("typeId", modal.typeId);
@@ -31,11 +38,34 @@ export const OrderModal = () => {
 	const watchDays = watch("days", 0);
 
 	const onToggleModalVisibility = (isVisible: boolean) => () => {
+		if (!isVisible) {
+			reset();
+			setPreview({url: "/images/logo.png", formData: null});
+		}
 		dispatch(setIsVisibleModalAction({name: "order", data: {isVisible, price: 0, currentType: "banner"}}));
 	};
 
-	const onSubmit = (state: IFields) => {
+	const onSubmit = async (state: IFields) => {
 		console.log(state);
+		if (modal.currentType === "banner") {
+			if (preview.formData) {
+				const action = await dispatch(fileUploadThunk(preview.formData));
+				const payload = action.payload as IFileUpload[];
+
+				if (payload) {
+					const banner = await dispatch(
+						postBannerThunk({days: state.days, typeId: state.typeId, url: state.url, posterId: payload[0].id}),
+					);
+
+					if (banner) {
+						toast.success("Вы приобрели баннер и можете проверить в личном кабинете.");
+						reset();
+						setPreview({url: "/images/logo.png", formData: null});
+						onToggleModalVisibility(false)();
+					}
+				}
+			}
+		}
 	};
 
 	const renderTypesOptions = () =>
@@ -44,6 +74,16 @@ export const OrderModal = () => {
 				{b.name} ({b.size})
 			</option>
 		));
+
+	const imageUpload = async (e: ChangeEvent<HTMLInputElement>) => {
+		if (e.target.files && e.target.files[0]) {
+			const formData = new FormData();
+			formData.set("files", e.target.files[0]);
+			const url = await getURLFromFile(e.target.files[0]);
+
+			setPreview({url: url as string, formData});
+		}
+	};
 
 	return (
 		<Modal
@@ -65,20 +105,56 @@ export const OrderModal = () => {
 				<div className="main-modal__body">
 					<div className="main-modal__forms">
 						<form onSubmit={handleSubmit(onSubmit)} className="main-modal__form">
-							<div className="main-modal__input form-floating mb-3">
-								<input
-									type="name"
-									className="form-control"
-									id="floatingName"
-									placeholder="Name"
-									{...register("title", {required: true})}
-								/>
-								<label htmlFor="floatingName">Name</label>
-							</div>
+							{modal.currentType === "banner" && (
+								<div className="main-modal__input mb-3">
+									<img
+										className="border border-2"
+										src={preview.url || "/images/logo.png"}
+										alt="preview"
+										style={{
+											width: "100%",
+											height: "160px",
+											objectFit: "cover",
+										}}
+									/>
+									<div className="flex gap-3 mt-1">
+										<label
+											htmlFor="fileUpload"
+											className="bg-white py-2 px-3 border border-gray-300 rounded-sm shadow-sm text-sm leading-4 font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+											style={{
+												cursor: "pointer",
+											}}
+										>
+											Загрузить
+										</label>
+
+										<input
+											style={{opacity: 0, visibility: "hidden"}}
+											id="fileUpload"
+											type="file"
+											accept="image/*"
+											className="w-0"
+											onChange={imageUpload}
+										/>
+									</div>
+								</div>
+							)}
 							{modal.currentType === "context" && (
 								<div className="main-modal__input form-floating mb-3">
 									<input
 										type="name"
+										className="form-control"
+										id="floatingName"
+										placeholder="Name"
+										{...register("title", {required: true})}
+									/>
+									<label htmlFor="floatingName">Name</label>
+								</div>
+							)}
+							{modal.currentType === "context" && (
+								<div className="main-modal__input form-floating mb-3">
+									<input
+										type="text"
 										className="form-control"
 										id="floatingName"
 										placeholder="Name"
@@ -89,11 +165,16 @@ export const OrderModal = () => {
 							)}
 							{modal.currentType !== "chain" && (
 								<div className="main-modal__input mb-3">
-									<select className="form-select" {...register("typeId")}>
+									<select
+										className="form-select"
+										{...register("typeId", {valueAsNumber: true, value: modal.typeId})}
+										disabled
+									>
 										{renderTypesOptions()}
 									</select>
 								</div>
 							)}
+
 							<div className="main-modal__input form-floating mb-3">
 								<input
 									type="text"
@@ -115,11 +196,6 @@ export const OrderModal = () => {
 								/>
 								<label htmlFor="floatingDay">На сколько дней?</label>
 							</div>
-							{/*<input type="hidden" name="project" value="bull_etrics" />
-							<input type="hidden" name="description" value="page_form" />
-							<input type="hidden" name="duration" className="duration" value="" />
-							<input type="hidden" name="pasted_fields" className="pasted_fields" value="" />
-							<input type="hidden" name="language" value="russian" />*/}
 							<h3>
 								Цена: <strong>{modal.price * (isNaN(watchDays) ? 0 : watchDays)}</strong> сум
 							</h3>

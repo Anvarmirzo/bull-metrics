@@ -5,37 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1fe5ec0f-6dce-48b3-bad2-9722109239aa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/components/Main/Banners/Banner1200x150/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Main/Banners/Banner150x150/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Main/Banners/Banner1600x200/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Main/Banners/Banner160x600/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Main/Banners/Banner728x90/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Main/Chains/HeaderChains/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Main/Chains/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Main/Contexts/MainContexts/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Main/Contexts/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/services/banner.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/services/chain.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/services/context.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/store/banner/banner.slices.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/store/banner/banner.thunks.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/store/chain/chain.slices.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/store/chain/chain.thunks.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/store/context/context.slices.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/store/context/context.thunks.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/services/file.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/store/fileUpload/fileUpload.slices.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/store/fileUpload/fileUpload.thunks.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Main/Banners/HeaderBanners/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main/Banners/HeaderBanners/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Main/Banners/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main/Banners/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Main/Footer/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main/Footer/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Main/Banners/Banner1200x150/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main/Banners/Banner1200x150/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Main/Banners/Banner150x150/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main/Banners/Banner150x150/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Main/Banners/Banner1600x200/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main/Banners/Banner1600x200/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Main/Banners/Banner160x600/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main/Banners/Banner160x600/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Main/Banners/Banner728x90/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main/Banners/Banner728x90/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Main/Modals/Order/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main/Modals/Order/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/models/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/core/models/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/services/banner.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/core/services/banner.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/services/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/core/services/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/store/modal/modal.slices.ts" beforeDir="false" afterPath="$PROJECT_DIR$/core/store/modal/modal.slices.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/store/banner/banner.thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/core/store/banner/banner.thunks.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/store/rootReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/core/store/rootReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/basic/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/utils/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/core/utils/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,29 +49,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/projects/react/bull-metrics/core/services",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.stylelint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.stylelint": "C:\\projects\\react\\bull-metrics\\node_modules\\stylelint",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "C:\\projects\\react\\bull-metrics\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Console Font",
-    "ts.external.directory.path": "C:\\projects\\react\\bull-metrics\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/projects/react/bull-metrics/core/services&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;C:\\projects\\react\\bull-metrics\\node_modules\\stylelint&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\projects\\react\\bull-metrics\\node_modules\\prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Console Font&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\projects\\react\\bull-metrics\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\projects\react\bull-metrics\core\services" />
@@ -114,7 +99,8 @@
       <workItem from="1670037508427" duration="1970000" />
       <workItem from="1670059066260" duration="10101000" />
       <workItem from="1670128007962" duration="21329000" />
-      <workItem from="1670171639496" duration="15962000" />
+      <workItem from="1670171639496" duration="16020000" />
+      <workItem from="1670250430521" duration="8698000" />
     </task>
     <servers />
   </component>

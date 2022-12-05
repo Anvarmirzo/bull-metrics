@@ -105,6 +105,13 @@ export interface IBanner {
 	activeAt: string;
 }
 
+export interface IBannerPostParams {
+	url: string;
+	typeId: number;
+	days: number;
+	posterId: number;
+}
+
 export interface IChainType {
 	id: number;
 	price: number;
@@ -153,4 +160,16 @@ export interface IFile {
 	id: number;
 	name: string;
 	url: string;
+}
+
+export interface IFileUpload {
+	id: number;
+	name: string;
+	originalName: string;
+	size: number;
+	mimeType: string;
+	url: string;
+	path: string;
+	createdAt: Date;
+	updatedAt: Date;
 }
