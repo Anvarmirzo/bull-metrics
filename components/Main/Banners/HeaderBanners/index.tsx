@@ -1,32 +1,15 @@
 import React from "react";
 import Image from "next/image";
-import LargeBanner from "../../../../public/images/banner-1600-200.png";
-import AddBanner from "../../../../public/images/AddBanner 1.png";
 import Logo from "../../../../public/images/logo.png";
-import Banner728 from "../../../../public/images/banner-728-90.png";
-import {useAppDispatch} from "../../../../core/hooks";
-import {setIsVisibleModalAction} from "../../../../core/store/modal/modal.slices";
+import {Banner728x90} from "../Banner728x90";
+import {Banner1600x200} from "../Banner1600x200";
 
 export const HeaderBanners = () => {
-	// redux hooks
-	const dispatch = useAppDispatch();
-
-	const onToggleModalVisibility = (payload: {name: "order"; isVisible: boolean}) => () => {
-		dispatch(setIsVisibleModalAction(payload));
-	};
 	return (
 		<>
-			<section className="banner-first" onClick={onToggleModalVisibility({name: "order", isVisible: true})}>
+			<section className="banner-first">
 				<div className="banner-first__container container-fluid">
-					<div className="banner__content banner-stroke__color">
-						<a href="#">
-							<Image unoptimized src={LargeBanner} alt="" />
-						</a>
-						<a href="#" className="banner__decor">
-							<Image unoptimized src={AddBanner} alt="" />
-							<span>Разместить рекламу</span>
-						</a>
-					</div>
+					<Banner1600x200 />
 				</div>
 			</section>
 			<section className="logo-section">
@@ -37,15 +20,7 @@ export const HeaderBanners = () => {
 						</a>
 					</div>
 					<div className="banner-second">
-						<div className="banner__content banner-stroke__color">
-							<a href="#">
-								<Image src={Banner728} alt="" />
-							</a>
-							<a href="#" className="banner__decor">
-								<Image src={AddBanner} alt="" />
-								<span>Разместить рекламу</span>
-							</a>
-						</div>
+						<Banner728x90 />
 					</div>
 				</div>
 			</section>

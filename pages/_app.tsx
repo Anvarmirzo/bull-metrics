@@ -13,6 +13,10 @@ import {useEffect} from "react";
 import {useAppDispatch, useAppSelector} from "../core/hooks";
 import {autoLoginThunk} from "../core/store/auth/auth.thunks";
 import {useRouter} from "next/router";
+import {getBannerTypesThunk} from "../core/store/banner/banner.thunks";
+import {setBannerTypesAction} from "../core/store/banner/banner.slices";
+import {getChainTypesThunk} from "../core/store/chain/chain.thunks";
+import {getContextTypesThunk} from "../core/store/context/context.thunks";
 
 const MyApp = ({Component, ...rest}: AppProps) => {
 	// next hooks
@@ -24,10 +28,16 @@ const MyApp = ({Component, ...rest}: AppProps) => {
 
 	// react hooks
 	useEffect(() => {
-		const promises = [dispatch(autoLoginThunk())];
+		const promises = [
+			dispatch(autoLoginThunk()),
+			dispatch(getBannerTypesThunk()),
+			dispatch(getChainTypesThunk()),
+			dispatch(getContextTypesThunk()),
+		];
 
 		return () => {
 			promises.forEach((p) => p.abort());
+			dispatch(setBannerTypesAction({count: 0, data: []}));
 		};
 	}, []);
 

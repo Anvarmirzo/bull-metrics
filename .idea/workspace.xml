@@ -5,7 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1fe5ec0f-6dce-48b3-bad2-9722109239aa" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/pages/account/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/account/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Main/Chains/HeaderChains/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main/Chains/HeaderChains/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Main/Contexts/MainContexts/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main/Contexts/MainContexts/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Main/Modals/Order/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main/Modals/Order/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/models/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/core/models/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/services/chain.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/core/services/chain.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/services/context.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/core/services/context.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/store/banner/banner.thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/core/store/banner/banner.thunks.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/store/chain/chain.thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/core/store/chain/chain.thunks.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/store/context/context.thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/core/store/context/context.thunks.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +50,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/projects/react/bull-metrics&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/projects/react/bull-metrics/core/services&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
@@ -59,6 +68,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\projects\react\bull-metrics\core\services" />
+      <recent name="C:\projects\react\bull-metrics\core\store" />
       <recent name="C:\projects\react\bull-metrics" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -82,7 +93,8 @@
       <workItem from="1670037508427" duration="1970000" />
       <workItem from="1670059066260" duration="10101000" />
       <workItem from="1670128007962" duration="21329000" />
-      <workItem from="1670171639496" duration="3934000" />
+      <workItem from="1670171639496" duration="16020000" />
+      <workItem from="1670250430521" duration="10937000" />
     </task>
     <servers />
   </component>
