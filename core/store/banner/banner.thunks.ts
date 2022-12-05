@@ -16,9 +16,8 @@ export const getBannerTypesThunk = createAsyncThunk(
 );
 
 export const postBannerThunk = createAsyncThunk('banner/post', async (params: IBannerPostParams, thunkAPI) => {
-	const result = await BannerService.post(params);
-	if (result) {
-		console.log(result);
-		return result;
+	const data = await BannerService.post(params);
+	if (data) {
+		return data;
 	}
 });

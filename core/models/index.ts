@@ -126,6 +126,12 @@ export interface IChain {
 	activeAt: string;
 }
 
+export interface IChainPostParams {
+	days: number;
+	url: string;
+	title: string;
+}
+
 export interface IContextType {
 	id: number;
 	name: string;
@@ -140,6 +146,14 @@ export interface IContext {
 	title: string;
 	description?: string;
 	activeAt: string;
+}
+
+export interface IContextPostParams {
+	url: string;
+	title: string;
+	description?: string;
+	days: number;
+	typeId: number;
 }
 
 export interface IUser {

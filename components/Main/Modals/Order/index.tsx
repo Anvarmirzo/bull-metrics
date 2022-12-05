@@ -8,6 +8,8 @@ import {fileUploadThunk} from "../../../../core/store/fileUpload/fileUpload.thun
 import {IFileUpload} from "../../../../core/models";
 import {postBannerThunk} from "../../../../core/store/banner/banner.thunks";
 import {toast} from "react-toastify";
+import {postChainThunk} from "../../../../core/store/chain/chain.thunks";
+import {postContextThunk} from "../../../../core/store/context/context.thunks";
 
 interface IFields {
 	url: string;
@@ -20,7 +22,7 @@ interface IFields {
 
 export const OrderModal = () => {
 	// redux hooks
-	const [modal, banner] = useAppSelector(({modal, banner}) => [modal.order, banner]);
+	const [modal, banner, context] = useAppSelector(({modal, banner, context}) => [modal.order, banner, context]);
 	const dispatch = useAppDispatch();
 
 	// react-hook-form
@@ -46,7 +48,6 @@ export const OrderModal = () => {
 	};
 
 	const onSubmit = async (state: IFields) => {
-		console.log(state);
 		if (modal.currentType === "banner") {
 			if (preview.formData) {
 				const action = await dispatch(fileUploadThunk(preview.formData));
@@ -65,15 +66,47 @@ export const OrderModal = () => {
 					}
 				}
 			}
+		} else if (modal.currentType === "chain") {
+			const chain = await dispatch(postChainThunk({days: state.days, url: state.url, title: state.title}));
+			if (chain) {
+				toast.success("Вы приобрели цепочку и можете проверить в личном кабинете.");
+				reset();
+				onToggleModalVisibility(false)();
+			}
+		} else if (modal.currentType === "context") {
+			const context = await dispatch(
+				postContextThunk({
+					days: state.days,
+					url: state.url,
+					typeId: state.typeId,
+					title: state.title,
+					description: state.description,
+				}),
+			);
+
+			if (context) {
+				toast.success("Вы приобрели контекст и можете проверить в личном кабинете.");
+				reset();
+				onToggleModalVisibility(false)();
+			}
 		}
 	};
 
-	const renderTypesOptions = () =>
-		banner.types.data.map((b) => (
-			<option value={b.id} key={b.id}>
-				{b.name} ({b.size})
-			</option>
-		));
+	const renderTypesOptions = () => {
+		if (modal.currentType === "banner") {
+			return banner.types.data.map((b) => (
+				<option value={b.id} key={b.id}>
+					{b.name} ({b.size})
+				</option>
+			));
+		} else if (modal.currentType === "context") {
+			return context.types.data.map((c) => (
+				<option value={c.id} key={c.id}>
+					{c.name}
+				</option>
+			));
+		}
+	};
 
 	const imageUpload = async (e: ChangeEvent<HTMLInputElement>) => {
 		if (e.target.files && e.target.files[0]) {
@@ -139,7 +172,7 @@ export const OrderModal = () => {
 									</div>
 								</div>
 							)}
-							{modal.currentType === "context" && (
+							{["context", "chain"].includes(modal.currentType) && (
 								<div className="main-modal__input form-floating mb-3">
 									<input
 										type="name"
@@ -168,7 +201,7 @@ export const OrderModal = () => {
 									<select
 										className="form-select"
 										{...register("typeId", {valueAsNumber: true, value: modal.typeId})}
-										disabled
+										disabled={modal.currentType !== "context"}
 									>
 										{renderTypesOptions()}
 									</select>
