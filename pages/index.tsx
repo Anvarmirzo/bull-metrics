@@ -12,7 +12,7 @@ import {
 	MainContexts,
 } from "../components";
 import {useAppSelector} from "../core/hooks";
-import {eBannerSize} from "../core/models";
+import {eBannerComponent, eBannerPosition, eBannerSize} from "../core/models";
 import {useCallback} from "react";
 
 const placeholders = {
@@ -28,17 +28,37 @@ export default function Home() {
 	const banners = useAppSelector(({banner}) => banner.data);
 
 	const renderBanners = useCallback(
-		(bannerSize: eBannerSize) => {
-			const currentBanners = banners.filter((b) => b.type.size === bannerSize);
+		({
+			bannerSize,
+			component,
+			position,
+			index,
+		}: {
+			bannerSize: eBannerSize;
+			component: eBannerComponent;
+			position: eBannerPosition;
+			index: number;
+		}) => {
+			const currentBanner = banners.find(
+				(b) =>
+					b.type.size === bannerSize &&
+					b.type.component === component &&
+					b.type.position === position &&
+					b.type.index === index,
+			);
 
-			if (currentBanners.length) {
-				return currentBanners.map((b) => {
-					const Component = placeholders[bannerSize];
-					return <Component banner={b} key={b.id} />;
-				});
+			if (currentBanner) {
+				const Component = placeholders[bannerSize];
+				return (
+					<Component
+						bannerInfo={{size: bannerSize, component, position, index}}
+						banner={currentBanner}
+						key={currentBanner.id}
+					/>
+				);
 			} else {
 				const Component = placeholders[bannerSize];
-				return <Component />;
+				return <Component bannerInfo={{size: bannerSize, component, position, index}} />;
 			}
 		},
 		[banners],
@@ -56,22 +76,54 @@ export default function Home() {
 			<HeaderChains />
 			<Header />
 
-			<section className="banner-third">{renderBanners(eBannerSize.size_1200x150)}</section>
+			<section className="banner-third">
+				{renderBanners({
+					bannerSize: eBannerSize.size_1200x150,
+					component: eBannerComponent.Main,
+					index: 1,
+					position: eBannerPosition.full,
+				})}
+			</section>
 
 			<section className="banner-fourth">
 				<div className="banner-fourth__container container">
 					<div className="banner-fourth__row row">
 						<div className="banner-fourth__left col">
-							{renderBanners(eBannerSize.size_160x600)}
-							{renderBanners(eBannerSize.size_150x150)}
+							{renderBanners({
+								bannerSize: eBannerSize.size_160x600,
+								component: eBannerComponent.Sidebar,
+								index: 1,
+								position: eBannerPosition.left,
+							})}
+							{renderBanners({
+								bannerSize: eBannerSize.size_150x150,
+								component: eBannerComponent.Sidebar,
+								index: 1,
+								position: eBannerPosition.left,
+							})}
 						</div>
 						<div className=" banner-fourth__center col-xl-6 col-sm-12">
-							{renderBanners(eBannerSize.size_728x90)}
+							{renderBanners({
+								bannerSize: eBannerSize.size_728x90,
+								component: eBannerComponent.Main,
+								index: 1,
+								position: eBannerPosition.full,
+							})}
 							<MainContexts />
 						</div>
 						<div className=" banner-fourth__right col">
-							{renderBanners(eBannerSize.size_160x600)}
-							{renderBanners(eBannerSize.size_150x150)}
+							{renderBanners({
+								bannerSize: eBannerSize.size_160x600,
+								component: eBannerComponent.Sidebar,
+								index: 1,
+								position: eBannerPosition.right,
+							})}
+							{renderBanners({
+								bannerSize: eBannerSize.size_150x150,
+								component: eBannerComponent.Sidebar,
+								index: 1,
+								position: eBannerPosition.right,
+							})}
 						</div>
 					</div>
 				</div>

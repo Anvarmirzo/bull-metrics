@@ -3,22 +3,35 @@ import Image from "next/image";
 import Banner1200 from "../../../../public/images/banner-1200-150.png";
 import AddBanner from "../../../../public/images/AddBanner 1.png";
 import {useAppDispatch, useAppSelector} from "../../../../core/hooks";
-import {eBannerSize, IBanner} from "../../../../core/models";
+import {eBannerComponent, eBannerPosition, eBannerSize, IBanner} from "../../../../core/models";
 import {setIsVisibleModalAction} from "../../../../core/store/modal/modal.slices";
 import {toast} from "react-toastify";
 import {clickerPatchThunk} from "../../../../core/store/clicker/clicker.thunks";
 
 interface IProps {
 	banner?: IBanner;
+	bannerInfo: {
+		size: eBannerSize;
+		component: eBannerComponent;
+		position: eBannerPosition;
+		index: number;
+	};
 }
 
-export const Banner1200x150 = ({banner}: IProps) => {
+export const Banner1200x150 = ({banner, bannerInfo}: IProps) => {
 	// redux hooks
 	const bannerTypes = useAppSelector(({banner}) => banner.types);
 	const dispatch = useAppDispatch();
 
 	const onToggleModalVisibility = (payload: {name: "order"; isVisible: boolean}) => () => {
-		const currentType = bannerTypes.data.find((b) => b.size === eBannerSize.size_1200x150);
+		const currentType = bannerTypes.data.find(
+			(b) =>
+				b.size === bannerInfo.size &&
+				b.component === bannerInfo.component &&
+				b.position === bannerInfo.position &&
+				b.index === bannerInfo.index,
+		);
+
 		if (currentType) {
 			dispatch(
 				setIsVisibleModalAction({

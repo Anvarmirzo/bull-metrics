@@ -37,6 +37,13 @@ export enum eBannerSize {
 	size_150x150 = 'size_150x150',
 }
 
+export enum eBannerComponent {
+	Header = 'header',
+	Sidebar = 'sidebar',
+	Main = 'main',
+	Footer = 'footer',
+}
+
 export interface ILinkObj {
 	name: string;
 	href: string;
@@ -95,6 +102,7 @@ export interface IBannerType {
 	price: number;
 	index?: number;
 	position: eBannerPosition;
+	component: eBannerComponent;
 }
 
 export interface IBanner {

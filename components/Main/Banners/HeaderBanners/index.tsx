@@ -4,7 +4,7 @@ import Logo from "../../../../public/images/logo.png";
 import {Banner728x90} from "../Banner728x90";
 import {Banner1600x200} from "../Banner1600x200";
 import {useAppSelector} from "../../../../core/hooks";
-import {eBannerSize} from "../../../../core/models";
+import {eBannerComponent, eBannerPosition, eBannerSize} from "../../../../core/models";
 import {Banner1200x150} from "../Banner1200x150";
 import {Banner160x600} from "../Banner160x600";
 import {Banner150x150} from "../Banner150x150";
@@ -22,17 +22,37 @@ export const HeaderBanners = () => {
 	const banners = useAppSelector(({banner}) => banner.data);
 
 	const renderBanners = useCallback(
-		(bannerSize: eBannerSize) => {
-			const currentBanners = banners.filter((b) => b.type.size === bannerSize);
+		({
+			bannerSize,
+			component,
+			position,
+			index,
+		}: {
+			bannerSize: eBannerSize;
+			component: eBannerComponent;
+			position: eBannerPosition;
+			index: number;
+		}) => {
+			const currentBanner = banners.find(
+				(b) =>
+					b.type.size === bannerSize &&
+					b.type.component === component &&
+					b.type.position === position &&
+					b.type.index === index,
+			);
 
-			if (currentBanners.length) {
-				return currentBanners.map((b) => {
-					const Component = placeholders[bannerSize];
-					return <Component banner={b} key={b.id} />;
-				});
+			if (currentBanner) {
+				const Component = placeholders[bannerSize];
+				return (
+					<Component
+						bannerInfo={{size: bannerSize, component, position, index}}
+						banner={currentBanner}
+						key={currentBanner.id}
+					/>
+				);
 			} else {
 				const Component = placeholders[bannerSize];
-				return <Component />;
+				return <Component bannerInfo={{size: bannerSize, component, position, index}} />;
 			}
 		},
 		[banners],
@@ -41,7 +61,14 @@ export const HeaderBanners = () => {
 	return (
 		<>
 			<section className="banner-first">
-				<div className="banner-first__container container-fluid">{renderBanners(eBannerSize.size_1600x200)}</div>
+				<div className="banner-first__container container-fluid">
+					{renderBanners({
+						bannerSize: eBannerSize.size_1600x200,
+						component: eBannerComponent.Header,
+						index: 1,
+						position: eBannerPosition.full,
+					})}
+				</div>
 			</section>
 			<section className="logo-section">
 				<div className="logo-section__container container">
@@ -50,7 +77,14 @@ export const HeaderBanners = () => {
 							<Image src={Logo} alt="" unoptimized />
 						</a>
 					</div>
-					<div className="banner-second">{renderBanners(eBannerSize.size_728x90)}</div>
+					<div className="banner-second">
+						{renderBanners({
+							bannerSize: eBannerSize.size_728x90,
+							component: eBannerComponent.Header,
+							index: 1,
+							position: eBannerPosition.full,
+						})}
+					</div>
 				</div>
 			</section>
 		</>
