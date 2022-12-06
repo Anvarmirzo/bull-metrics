@@ -5,6 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1fe5ec0f-6dce-48b3-bad2-9722109239aa" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/core/services/clicker.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/store/clicker/clicker.slices.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/store/clicker/clicker.thunks.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/payeer_1789841098.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Main/Banners/Banner1200x150/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main/Banners/Banner1200x150/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Main/Banners/Banner150x150/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main/Banners/Banner150x150/index.tsx" afterDir="false" />
@@ -14,22 +18,11 @@
       <change beforePath="$PROJECT_DIR$/components/Main/Banners/HeaderBanners/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main/Banners/HeaderBanners/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Main/Chains/HeaderChains/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main/Chains/HeaderChains/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Main/Contexts/MainContexts/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main/Contexts/MainContexts/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Main/Footer/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main/Footer/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Main/Modals/Order/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main/Modals/Order/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/models/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/core/models/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/services/banner.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/core/services/banner.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/services/chain.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/core/services/chain.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/services/context.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/core/services/context.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/store/banner/banner.slices.ts" beforeDir="false" afterPath="$PROJECT_DIR$/core/store/banner/banner.slices.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/store/banner/banner.thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/core/store/banner/banner.thunks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/store/chain/chain.slices.ts" beforeDir="false" afterPath="$PROJECT_DIR$/core/store/chain/chain.slices.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/store/chain/chain.thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/core/store/chain/chain.thunks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/store/context/context.slices.ts" beforeDir="false" afterPath="$PROJECT_DIR$/core/store/context/context.slices.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/store/context/context.thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/core/store/context/context.thunks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/utils/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/core/utils/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/services/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/core/services/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/store/rootReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/core/store/rootReducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/account/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/account/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +103,8 @@
       <workItem from="1670128007962" duration="21329000" />
       <workItem from="1670171639496" duration="16020000" />
       <workItem from="1670250430521" duration="12364000" />
-      <workItem from="1670264517981" duration="6252000" />
+      <workItem from="1670264517981" duration="6530000" />
+      <workItem from="1670339047174" duration="7267000" />
     </task>
     <servers />
   </component>

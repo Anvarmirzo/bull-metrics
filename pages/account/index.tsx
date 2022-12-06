@@ -101,7 +101,7 @@ const Account = () => {
 					<section className="personal-data-section">
 						<div className="personal-data-section__container container">
 							<div className="personal-data-section__banner">
-								<Image className="personal-data-section__banner_img" src={BgImage} alt="" />
+								<Image className="personal-data-section__banner_img" src={BgImage} alt="" unoptimized />
 								<div className="personal-data-section__socials">
 									<a href="#">
 										<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -144,7 +144,7 @@ const Account = () => {
 							<div className="personal-data-section__information">
 								<div className="personal-data-section__information_content">
 									<div className="personal-data-section__information_img">
-										<Image src={Avatar} alt="" />
+										<Image src={Avatar} alt="" unoptimized />
 									</div>
 									<div className="personal-data-section__information_name">
 										<h2>{user.name}</h2>
@@ -162,7 +162,7 @@ const Account = () => {
 										<div className="personal-info-section__tab-body">
 											<div className="personal-info-section__tab-img">
 												<button type="button">
-													<Image src={Avatar} alt="" />
+													<Image src={Avatar} alt="" unoptimized />
 													<div className="personal-info-section__tab-img-item">
 														<span>Сменить аватар</span>
 													</div>

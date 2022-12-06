@@ -6,6 +6,7 @@ import {useAppDispatch, useAppSelector} from "../../../../core/hooks";
 import {eBannerSize, IBanner} from "../../../../core/models";
 import {setIsVisibleModalAction} from "../../../../core/store/modal/modal.slices";
 import {toast} from "react-toastify";
+import {clickerPatchThunk} from "../../../../core/store/clicker/clicker.thunks";
 
 interface IProps {
 	banner?: IBanner;
@@ -30,10 +31,16 @@ export const Banner1200x150 = ({banner}: IProps) => {
 		}
 	};
 
+	const onBannerClick = () => {
+		if (banner) {
+			dispatch(clickerPatchThunk({id: banner.id, ad: "banner"}));
+		}
+	};
+
 	return (
 		<div className="banner-third__container container">
 			<div className="banner__content banner-stroke__color">
-				<a href={banner?.url ?? "/"} target="_blank" rel="noreferrer">
+				<a onClick={onBannerClick} href={banner?.url ?? "/"} target="_blank" rel="noreferrer">
 					<Image
 						width={1200}
 						height={150}
@@ -41,6 +48,7 @@ export const Banner1200x150 = ({banner}: IProps) => {
 						alt=""
 						style={{width: "1200px", height: "150px", maxWidth: "100%", objectFit: "cover"}}
 						crossOrigin="use-credentials"
+						unoptimized
 					/>
 				</a>
 				<button
@@ -48,7 +56,7 @@ export const Banner1200x150 = ({banner}: IProps) => {
 					type="button"
 					className="banner__decor"
 				>
-					<Image src={AddBanner} alt="" />
+					<Image src={AddBanner} alt="" unoptimized />
 					<span>Разместить рекламу</span>
 				</button>
 			</div>

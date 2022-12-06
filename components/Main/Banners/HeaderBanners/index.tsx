@@ -47,7 +47,7 @@ export const HeaderBanners = () => {
 				<div className="logo-section__container container">
 					<div className="logo">
 						<a href="#">
-							<Image src={Logo} alt="" />
+							<Image src={Logo} alt="" unoptimized />
 						</a>
 					</div>
 					<div className="banner-second">{renderBanners(eBannerSize.size_728x90)}</div>
