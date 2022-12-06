@@ -5,24 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1fe5ec0f-6dce-48b3-bad2-9722109239aa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/core/services/clicker.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/store/clicker/clicker.slices.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/store/clicker/clicker.thunks.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/payeer_1789841098.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Main/Banners/Banner1200x150/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main/Banners/Banner1200x150/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Main/Banners/Banner150x150/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main/Banners/Banner150x150/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Main/Banners/Banner1600x200/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main/Banners/Banner1600x200/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Main/Banners/Banner160x600/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main/Banners/Banner160x600/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Main/Banners/Banner728x90/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main/Banners/Banner728x90/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Main/Banners/HeaderBanners/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main/Banners/HeaderBanners/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Main/Chains/HeaderChains/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main/Chains/HeaderChains/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Main/Contexts/MainContexts/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main/Contexts/MainContexts/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/services/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/core/services/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/store/rootReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/core/store/rootReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Main/Modals/Order/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main/Modals/Order/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/services/clicker.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/core/services/clicker.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/store/clicker/clicker.thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/core/store/clicker/clicker.thunks.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/account/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/account/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +97,7 @@
       <workItem from="1670171639496" duration="16020000" />
       <workItem from="1670250430521" duration="12364000" />
       <workItem from="1670264517981" duration="6530000" />
-      <workItem from="1670339047174" duration="7267000" />
+      <workItem from="1670339047174" duration="12397000" />
     </task>
     <servers />
   </component>

@@ -30,9 +30,12 @@ const MyApp = ({Component, ...rest}: AppProps) => {
 
 	// react hooks
 	useEffect(() => {
+		let jwt: string | null = null;
+		if (typeof window !== "undefined") {
+			jwt = localStorage.getItem("jwt");
+		}
 		const promises = [
-			dispatch(autoLoginThunk()),
-
+			...(jwt ? [dispatch(autoLoginThunk())] : []),
 			dispatch(getBannerTypesThunk()),
 			dispatch(getChainTypesThunk()),
 			dispatch(getContextTypesThunk()),
