@@ -32,7 +32,6 @@ export default function Home() {
 			const currentBanners = banners.filter((b) => b.type.size === bannerSize);
 
 			if (currentBanners.length) {
-				console.log(currentBanners);
 				return currentBanners.map((b) => {
 					const Component = placeholders[bannerSize];
 					return <Component banner={b} key={b.id} />;

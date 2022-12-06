@@ -233,6 +233,7 @@ export const OrderModal = () => {
 									id="floatingDay"
 									placeholder="Дни"
 									defaultValue={0}
+									min={0}
 									{...register("days", {required: true, valueAsNumber: true})}
 								/>
 								<label htmlFor="floatingDay">На сколько дней?</label>

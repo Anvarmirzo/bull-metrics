@@ -33,7 +33,7 @@ export const Banner150x150 = ({banner}: IProps) => {
 
 	const onBannerClick = () => {
 		if (banner) {
-			dispatch(clickerPatchThunk({id: banner.id, ad: "banner"}));
+			dispatch(clickerPatchThunk({id: banner.id, type: "banner"}));
 		}
 	};
 
