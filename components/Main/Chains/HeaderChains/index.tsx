@@ -71,7 +71,7 @@ export const HeaderChains = () => {
 					type="button"
 					className="d-block ms-auto banner__decor"
 				>
-					<Image src={AddBanner} alt="" />
+					<Image src={AddBanner} alt="" unoptimized />
 					<span>Разместить рекламу</span>
 				</button>
 			</div>

@@ -5,7 +5,6 @@ import {useAppDispatch, useAppSelector} from "../../../../core/hooks";
 import {setIsVisibleModalAction} from "../../../../core/store/modal/modal.slices";
 import {toast} from "react-toastify";
 import Link from "next/link";
-import {SwiperSlide} from "swiper/react";
 
 export const MainContexts = () => {
 	// redux hooks
@@ -43,7 +42,7 @@ export const MainContexts = () => {
 		const placeholdersCount = 3 - contexts.length;
 
 		if (placeholdersCount > 0) {
-			return new Array(placeholdersCount).map((_, i) => (
+			return Array.from({length: placeholdersCount}).map((_, i) => (
 				<div className="banner-fourth__list" key={i}>
 					<div className="banner-fourth__list-link">
 						<Link href="/">Lorem ipsum dolor sit amet consectetur adipisicing elit.</Link>
@@ -67,7 +66,7 @@ export const MainContexts = () => {
 				type="button"
 				className="d-block ms-auto mt-4 mb-2 banner__decor"
 			>
-				<Image src={AddBanner} alt="" />
+				<Image src={AddBanner} alt="" unoptimized />
 				<span>Разместить рекламу</span>
 			</button>
 			{renderContexts()}

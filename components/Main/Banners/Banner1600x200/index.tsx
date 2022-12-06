@@ -6,6 +6,7 @@ import {useAppDispatch, useAppSelector} from "../../../../core/hooks";
 import {setIsVisibleModalAction} from "../../../../core/store/modal/modal.slices";
 import {eBannerSize, IBanner} from "../../../../core/models";
 import {toast} from "react-toastify";
+import {clickerPatchThunk} from "../../../../core/store/clicker/clicker.thunks";
 
 interface IProps {
 	banner?: IBanner;
@@ -30,9 +31,15 @@ export const Banner1600x200 = ({banner}: IProps) => {
 		}
 	};
 
+	const onBannerClick = () => {
+		if (banner) {
+			dispatch(clickerPatchThunk({id: banner.id, ad: "banner"}));
+		}
+	};
+
 	return (
 		<div className="banner__content banner-stroke__color">
-			<a href={banner?.url ?? "/"} target="_blank" rel="noreferrer">
+			<a onClick={onBannerClick} href={banner?.url ?? "/"} target="_blank" rel="noreferrer">
 				<Image
 					width={1600}
 					height={200}
@@ -40,6 +47,7 @@ export const Banner1600x200 = ({banner}: IProps) => {
 					alt=""
 					style={{width: "1600px", height: "200px", maxWidth: "100%", objectFit: "cover"}}
 					crossOrigin="use-credentials"
+					unoptimized
 				/>
 			</a>
 			<button
