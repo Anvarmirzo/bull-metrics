@@ -215,11 +215,6 @@ const Account = () => {
 													<label htmlFor="floatingPhone">Phone</label>
 												</div>
 
-												{/*<input type="hidden" name="project" value="bull_etrics" />
-												<input type="hidden" name="description" value="page_form" />
-												<input type="hidden" name="duration" className="duration" value="" />
-												<input type="hidden" name="pasted_fields" className="pasted_fields" value="" />
-												<input type="hidden" name="language" value="russian" />*/}
 												<button className="personal-info-section__btn">Сменить</button>
 											</form>
 										</div>
@@ -241,104 +236,7 @@ const Account = () => {
 										</div>
 									</div>
 								</Tab>
-								<Tab eventKey="social" title="Соц сети">
-									<div className="personal-info-section__tab-pane">
-										<div className="personal-info-section__tab-socials">
-											<div className="personal-info-section__tab-social">
-												<form action="" method="post" className="personal-info-section__form">
-													<div className="personal-info-section__input form-floating mb-3">
-														<input
-															type="text"
-															className="form-control"
-															id="floatingInput1"
-															placeholder="url instagram"
-															required
-														/>
-														<label htmlFor="floatingInput1">url instagram</label>
-														<button className="personal-info-section__tab-btn mt-3" type="button">
-															Добавить
-														</button>
-													</div>
-													<div className="personal-info-section__input form-floating mb-3">
-														<input
-															type="text"
-															className="form-control"
-															id="floatingInput2"
-															placeholder="url telegram"
-															required
-														/>
-														<label htmlFor="floatingInput2">url telegram</label>
-														<button className="personal-info-section__tab-btn mt-3" type="button">
-															Добавить
-														</button>
-													</div>
-													<div className="personal-info-section__input form-floating mb-3">
-														<input
-															type="text"
-															className="form-control"
-															id="floatingInput3"
-															placeholder="url youtube"
-															required
-														/>
-														<label htmlFor="floatingInput3">url youtube</label>
-														<button className="personal-info-section__tab-btn mt-3" type="button">
-															Добавить
-														</button>
-													</div>
-													<div className="personal-info-section__input form-floating mb-3">
-														<input
-															type="text"
-															className="form-control"
-															id="floatingInput4"
-															placeholder="url facebook"
-															required
-														/>
-														<label htmlFor="floatingInput5">url facebook</label>
-														<button className="personal-info-section__tab-btn mt-3" type="button">
-															Добавить
-														</button>
-													</div>
-												</form>
-												{/*<!-- <div className="personal-info-section__tab-social-buttons">
-								<button className="personal-info-section__tab-btn mb-3" type="button">
-								Добавить
-								</button>
-								<button className="personal-info-section__tab-btn mb-3" type="button">
-								Добавить
-								</button>
-								<button className="personal-info-section__tab-btn  mb-3" type="button">
-								Добавить
-								</button>
-								<button className="personal-info-section__tab-btn mb-3" type="button">
-								Добавить
-								</button>
-								</div> -->*/}
-											</div>
-										</div>
-									</div>
-								</Tab>
-								<Tab eventKey="notifications" title="Оповещения">
-									<div className="personal-info-section__tab-pane">
-										<div className="personal-info-section__tab-alerts">
-											<div className="personal-info-section__tab-alert">
-												<h4>Заголовок</h4>
-												<p>
-													Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat voluptatibus velit
-													exercitationem quis magnam alias libero nobis facere ipsa accusantium quas ea numquam
-													obcaecati molestias sapiente harum, ab sequi iste.
-												</p>
-											</div>
-											<div className="personal-info-section__tab-alert">
-												<h4>Заголовок</h4>
-												<p>
-													Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat voluptatibus velit
-													exercitationem quis magnam alias libero nobis facere ipsa accusantium quas ea numquam
-													obcaecati molestias sapiente harum, ab sequi iste.
-												</p>
-											</div>
-										</div>
-									</div>
-								</Tab>
+
 								<Tab eventKey="security" title="Безопасность">
 									<div className="personal-info-section__tab-pane">
 										<div className="personal-info-section__tab-safety">
@@ -482,20 +380,12 @@ const Account = () => {
 													<span>15$</span>
 												</div>
 												<div className="personal-info-section__tab-balance">
-													<h4>Размер:</h4>
+													<h4>Цепочка:</h4>
 													<span>150x600</span>
 												</div>
 												<div className="personal-info-section__tab-balance">
 													<h4>Контекстная реклама:</h4>
 													<span>1</span>
-												</div>
-												<div className="personal-info-section__tab-buttons">
-													<button className="personal-info-section__tab-btn" type="button">
-														Вывод в топ
-													</button>
-													<button className="personal-info-section__tab-btn" type="button">
-														Закрепить
-													</button>
 												</div>
 											</div>
 										</div>
