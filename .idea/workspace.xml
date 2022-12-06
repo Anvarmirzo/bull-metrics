@@ -11,10 +11,9 @@
       <change beforePath="$PROJECT_DIR$/components/Main/Banners/Banner1600x200/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main/Banners/Banner1600x200/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Main/Banners/Banner160x600/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main/Banners/Banner160x600/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Main/Banners/Banner728x90/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main/Banners/Banner728x90/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Main/Modals/Order/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main/Modals/Order/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/services/clicker.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/core/services/clicker.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/store/clicker/clicker.thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/core/store/clicker/clicker.thunks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Main/Banners/HeaderBanners/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main/Banners/HeaderBanners/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Main/Footer/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main/Footer/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/models/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/core/models/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -97,7 +96,7 @@
       <workItem from="1670171639496" duration="16020000" />
       <workItem from="1670250430521" duration="12364000" />
       <workItem from="1670264517981" duration="6530000" />
-      <workItem from="1670339047174" duration="12397000" />
+      <workItem from="1670339047174" duration="15434000" />
     </task>
     <servers />
   </component>
